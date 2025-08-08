@@ -20,7 +20,7 @@ const Navbar = () => {
 
     const navLinkStyle = ({ isActive }) =>
         `flex items-center px-3 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-            isActive ? 'bg-primary text-white shadow-md' : 'text-text-light hover:text-primary'
+            isActive ? 'bg-red-400 text-white shadow-md' : 'text-text-light hover:text-primary'
         }`;
     
     const mobileNavLinkStyle = ({ isActive }) =>
