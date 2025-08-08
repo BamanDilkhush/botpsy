@@ -1,0 +1,382 @@
+[
+  {
+    "questionId": 1,
+    "question_en": "How often does the individual make eye contact when talking to you or others?",
+    "question_hi": "आपसे या दूसरों से बात करते समय व्यक्ति कितनी बार आँख से संपर्क बनाता है?",
+    "options_en": ["Consistently and appropriately", "Sometimes, but avoids it", "Rarely or very briefly", "Almost never"],
+    "options_hi": ["लगातार और उचित रूप से", "कभी-कभी, लेकिन इससे बचता है", "बहुत कम या बहुत संक्षेप में", "लगभग कभी नहीं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 2,
+    "question_en": "When you call their name, how often do they look up or respond?",
+    "question_hi": "जब आप उनका नाम पुकारते हैं, तो वे कितनी बार ऊपर देखते हैं या प्रतिक्रिया देते हैं?",
+    "options_en": ["Almost always", "Usually", "Sometimes", "Rarely or never"],
+    "options_hi": ["लगभग हमेशा", "आमतौर पर", "कभी-कभी", "शायद ही कभी या कभी नहीं"],
+    "weightage": [0, 0, 1, 2],
+    "ageGroup": ["2-5", "5-12"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 3,
+    "question_en": "Does the child use gestures (like pointing or waving) to communicate?",
+    "question_hi": "क्या बच्चा संवाद करने के लिए इशारों (जैसे इशारा करना या हाथ हिलाना) का उपयोग करता है?",
+    "options_en": ["Yes, regularly and appropriately", "Sometimes, but less than other children", "Rarely", "No, not at all"],
+    "options_hi": ["हाँ, नियमित और उचित रूप से", "कभी-कभी, लेकिन दूसरे बच्चों से कम", "शायद ही कभी", "नहीं, बिल्कुल नहीं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 4,
+    "question_en": "How interested is the individual in playing or interacting with peers?",
+    "question_hi": "व्यक्ति अपने साथियों के साथ खेलने या बातचीत करने में कितनी रुचि रखता है?",
+    "options_en": ["Very interested and initiates interaction", "Interested, but prefers to follow others' lead", "Prefers to play alone but will join if prompted", "Strongly prefers to be alone"],
+    "options_hi": ["बहुत रुचि रखता है और बातचीत शुरू करता है", "रुचि रखता है, लेकिन दूसरों का नेतृत्व करना पसंद करता है", "अकेले खेलना पसंद करता है लेकिन प्रेरित करने पर शामिल हो जाएगा", "अकेले रहना बहुत पसंद करता है"],
+    "weightage": [0, 1, 1, 2],
+    "ageGroup": ["5-12", "12-16"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 5,
+    "question_en": "How well does the individual understand social cues like tone of voice or facial expressions?",
+    "question_hi": "व्यक्ति सामाजिक संकेतों जैसे आवाज का लहजा या चेहरे के भावों को कितनी अच्छी तरह समझता है?",
+    "options_en": ["Very well, understands sarcasm and humor", "Usually understands, but sometimes misses subtle cues", "Often misinterprets social cues", "Finds it very difficult to understand non-verbal cues"],
+    "options_hi": ["बहुत अच्छी तरह से, व्यंग्य और हास्य को समझता है", "आमतौर पर समझता है, लेकिन कभी-कभी सूक्ष्म संकेतों को चूक जाता है", "अक्सर सामाजिक संकेतों की गलत व्याख्या करता है", "गैर-मौखिक संकेतों को समझना बहुत मुश्किल लगता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["12-16", "16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 6,
+    "question_en": "Do you find it challenging to maintain back-and-forth conversations?",
+    "question_hi": "क्या आपको आगे-पीछे की बातचीत बनाए रखने में मुश्किल होती है?",
+    "options_en": ["No, conversations flow easily", "Sometimes, I'm not sure what to say next", "Often, I prefer others to lead the conversation", "Yes, it's very difficult for me"],
+    "options_hi": ["नहीं, बातचीत आसानी से होती है", "कभी-कभी, मुझे यकीन नहीं होता कि आगे क्या कहना है", "अक्सर, मैं चाहता हूं कि दूसरे बातचीत का नेतृत्व करें", "हाँ, यह मेरे लिए बहुत मुश्किल है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 10,
+    "question_en": "Does the individual have repetitive body movements, like hand-flapping, rocking, or spinning?",
+    "question_hi": "क्या व्यक्ति के शरीर में बार-बार हरकतें होती हैं, जैसे हाथ फड़फड़ाना, हिलना या घूमना?",
+    "options_en": ["No, never observed", "Only when very excited or upset", "Sometimes, during quiet moments", "Yes, frequently throughout the day"],
+    "options_hi": ["नहीं, कभी नहीं देखा", "केवल बहुत उत्साहित या परेशान होने पर", "कभी-कभी, शांत क्षणों के दौरान", "हाँ, दिन भर में अक्सर"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 11,
+    "question_en": "How does the individual react to small changes in routine or expectations?",
+    "question_hi": "व्यक्ति दिनचर्या या अपेक्षाओं में छोटे बदलावों पर कैसी प्रतिक्रिया देता है?",
+    "options_en": ["Adapts easily without distress", "Is okay with changes if prepared beforehand", "Becomes anxious or a little upset", "Becomes very distressed or has a meltdown"],
+    "options_hi": ["बिना किसी परेशानी के आसानी से ढल जाता है", "अगर पहले से तैयार हो तो बदलावों से ठीक है", "चिंतित या थोड़ा परेशान हो जाता है", "बहुत परेशान हो जाता है या पूरी तरह से टूट जाता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 12,
+    "question_en": "Does the individual have unusually intense or narrow interests?",
+    "question_hi": "क्या व्यक्ति की रुचियाँ असामान्य रूप से तीव्र या संकीर्ण हैं?",
+    "options_en": ["Has a typical range of interests for their age", "Has a few very strong interests but is open to others", "Has one or two interests that dominate their time and conversation", "Almost exclusively focuses on one specific topic"],
+    "options_hi": ["अपनी उम्र के हिसाब से रुचियों की एक सामान्य श्रृंखला है", "कुछ बहुत मजबूत रुचियाँ हैं लेकिन दूसरों के लिए खुला है", "एक या दो रुचियाँ हैं जो उनके समय और बातचीत पर हावी हैं", "लगभग विशेष रूप से एक विशिष्ट विषय पर ध्यान केंद्रित करता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 13,
+    "question_en": "Does the child play with toys in an unusual or repetitive way (e.g., lining them up, spinning parts)?",
+    "question_hi": "क्या बच्चा खिलौनों से असामान्य या दोहराव वाले तरीके से खेलता है (जैसे, उन्हें लाइन में लगाना, हिस्सों को घुमाना)?",
+    "options_en": ["No, plays with toys as intended", "Sometimes", "Often", "Almost always"],
+    "options_hi": ["नहीं, खिलौनों से इच्छानुसार खेलता है", "कभी-कभी", "अक्सर", "लगभग हमेशा"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 20,
+    "question_en": "How does the individual react to everyday sounds (e.g., vacuum cleaner, blender, hairdryer)?",
+    "question_hi": "व्यक्ति रोजमर्रा की आवाजों (जैसे, वैक्यूम क्लीनर, ब्लेंडर, हेयर ड्रायर) पर कैसी प्रतिक्रिया देता है?",
+    "options_en": ["Normal reaction, not bothered", "Sometimes startled or dislikes them", "Often covers ears or shows distress", "Seems unaware of or under-reactive to loud sounds"],
+    "options_hi": ["सामान्य प्रतिक्रिया, परेशान नहीं होता", "कभी-कभी चौंक जाता है या उन्हें नापसंद करता है", "अक्सर कान ढंकता है या परेशानी दिखाता है", "तेज आवाजों के प्रति अनभिज्ञ या कम प्रतिक्रियाशील लगता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Sensory Sensitivity"
+  },
+  {
+    "questionId": 21,
+    "question_en": "How does the individual react to the texture of certain foods, clothing, or being touched?",
+    "question_hi": "व्यक्ति कुछ खाद्य पदार्थों, कपड़ों की बनावट या छुए जाने पर कैसी प्रतिक्रिया देता है?",
+    "options_en": ["No issues with textures", "Is a picky eater or particular about clothes", "Strongly dislikes certain textures, leading to distress", "Seeks out intense sensory input (e.g., tight hugs, rough textures)"],
+    "options_hi": ["बनावट के साथ कोई समस्या नहीं", "एक picky खाने वाला है या कपड़ों के बारे में विशेष है", "कुछ बनावटों को बहुत नापसंद करता है, जिससे परेशानी होती है", "तीव्र संवेदी इनपुट की तलाश करता है (जैसे, तंग गले लगना, खुरदरी बनावट)"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Sensory Sensitivity"
+  },
+  {
+    "questionId": 22,
+    "question_en": "Does the individual seem unusually sensitive to lights or visual patterns?",
+    "question_hi": "क्या व्यक्ति रोशनी या दृश्य पैटर्न के प्रति असामान्य रूप से संवेदनशील लगता है?",
+    "options_en": ["No, not at all", "Sometimes squints or looks away from bright lights", "Is fascinated by or stares at lights/patterns", "Becomes distressed by certain visual stimuli"],
+    "options_hi": ["नहीं, बिल्कुल नहीं", "कभी-कभी तेज रोशनी से आँखें मिचमिचाता है या दूर देखता है", "रोशनी/पैटर्न से मोहित होता है या घूरता है", "कुछ दृश्य उत्तेजनाओं से परेशान हो जाता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Sensory Sensitivity"
+  },
+  {
+    "questionId": 30,
+    "question_en": "Does the child ever repeat phrases they have heard (echolalia), either immediately or later?",
+    "question_hi": "क्या बच्चा कभी सुने हुए वाक्यांशों को दोहराता है (इकोलालिया), या तो तुरंत या बाद में?",
+    "options_en": ["No, or very rarely", "Sometimes, when learning new words", "Often repeats questions instead of answering", "Frequently repeats phrases from TV, movies, or other people"],
+    "options_hi": ["नहीं, या बहुत कम", "कभी-कभी, नए शब्द सीखते समय", "अक्सर जवाब देने के बजाय सवाल दोहराता है", "अक्सर टीवी, फिल्मों या अन्य लोगों से वाक्यांश दोहराता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 31,
+    "question_en": "How would you describe the individual's tone of voice?",
+    "question_hi": "आप व्यक्ति की आवाज के लहजे का वर्णन कैसे करेंगे?",
+    "options_en": ["Normal, varied intonation", "Tends to be flat or monotone", "Unusual pitch (very high or low)", "Speaks in a formal, 'scripted' or old-fashioned way"],
+    "options_hi": ["सामान्य, विविध स्वर-शैली", "सपाट या नीरस होता है", "असामान्य पिच (बहुत ऊँची या नीची)", "एक औपचारिक, 'स्क्रिप्टेड' या पुराने जमाने के तरीके से बोलता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 32,
+    "question_en": "Does the individual take things very literally?",
+    "question_hi": "क्या व्यक्ति चीजों को बहुत शाब्दिक रूप से लेता है?",
+    "options_en": ["No, understands figures of speech", "Sometimes gets confused by idioms or sarcasm", "Often takes things literally", "Almost always takes things literally"],
+    "options_hi": ["नहीं, भाषण के आंकड़ों को समझता है", "कभी-कभी मुहावरों या व्यंग्य से भ्रमित हो जाता है", "अक्सर चीजों को शाब्दिक रूप से लेता है", "लगभग हमेशा चीजों को शाब्दिक रूप से लेता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["12-16", "16+"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 33,
+    "question_en": "How does the child use 'you' and 'I'?",
+    "question_hi": "बच्चा 'आप' और 'मैं' का उपयोग कैसे करता है?",
+    "options_en": ["Correctly", "Sometimes mixes them up", "Often reverses them (e.g., says 'you want a drink' when they mean 'I want a drink')", "Not applicable / Not using sentences yet"],
+    "options_hi": ["सही ढंग से", "कभी-कभी उन्हें मिला देता है", "अक्सर उन्हें उलट देता है (जैसे, 'आपको एक पेय चाहिए' कहता है जब उनका मतलब 'मुझे एक पेय चाहिए' होता है)", "लागू नहीं / अभी तक वाक्यों का उपयोग नहीं कर रहा है"],
+    "weightage": [0, 1, 2, 0],
+    "ageGroup": ["2-5"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 40,
+    "question_en": "Does the child bring objects to you to show you something?",
+    "question_hi": "क्या बच्चा आपको कुछ दिखाने के लिए आपके पास वस्तुएं लाता है?",
+    "options_en": ["Yes, frequently", "Sometimes", "Rarely", "Never"],
+    "options_hi": ["हाँ, अक्सर", "कभी-कभी", "शायद ही कभी", "कभी नहीं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 41,
+    "question_en": "Does the child imitate you? (e.g., you make a face and the child imitates it)",
+    "question_hi": "क्या बच्चा आपकी नकल करता है? (जैसे, आप एक चेहरा बनाते हैं और बच्चा उसकी नकल करता है)",
+    "options_en": ["Yes, often", "Sometimes", "Rarely", "Never"],
+    "options_hi": ["हाँ, अक्सर", "कभी-कभी", "शायद ही कभी", "कभी नहीं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 42,
+    "question_en": "Do you find it easy to understand what others are thinking or feeling without them telling you?",
+    "question_hi": "क्या आपको यह समझना आसान लगता है कि दूसरे क्या सोच रहे हैं या महसूस कर रहे हैं, बिना उनके बताए?",
+    "options_en": ["Yes, I'm quite intuitive", "I can sometimes, but often I'm unsure", "No, I find it very difficult", "I don't really think about what others are feeling"],
+    "options_hi": ["हाँ, मैं काफी सहज हूँ", "मैं कभी-कभी कर सकता हूँ, लेकिन अक्सर मुझे यकीन नहीं होता", "नहीं, मुझे यह बहुत मुश्किल लगता है", "मैं वास्तव में यह नहीं सोचता कि दूसरे क्या महसूस कर रहे हैं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 43,
+    "question_en": "Do you prefer to plan things out in detail before doing them?",
+    "question_hi": "क्या आप चीजों को करने से पहले विस्तार से योजना बनाना पसंद करते हैं?",
+    "options_en": ["No, I'm happy to be spontaneous", "I like to have a general idea, but I'm flexible", "Yes, I prefer a detailed plan", "I get very anxious if I don't have a detailed plan"],
+    "options_hi": ["नहीं, मैं सहज होने में खुश हूँ", "मुझे एक सामान्य विचार रखना पसंद है, लेकिन मैं लचीला हूँ", "हाँ, मुझे एक विस्तृत योजना पसंद है", "अगर मेरे पास एक विस्तृत योजना नहीं है तो मैं बहुत चिंतित हो जाता हूँ"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 44,
+    "question_en": "Do you notice small details that others do not?",
+    "question_hi": "क्या आप छोटे विवरणों पर ध्यान देते हैं जो दूसरे नहीं देते?",
+    "options_en": ["Not particularly", "Sometimes", "Often", "Yes, I'm often the first to notice small changes"],
+    "options_hi": ["विशेष रूप से नहीं", "कभी-कभी", "अक्सर", "हाँ, मैं अक्सर छोटे बदलावों पर ध्यान देने वाला पहला व्यक्ति होता हूँ"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Sensory Sensitivity"
+  },
+  {
+    "questionId": 45,
+    "question_en": "How does the child respond to pretend play (e.g., feeding a doll, talking on a toy phone)?",
+    "question_hi": "बच्चा नाटक खेलने पर कैसी प्रतिक्रिया देता है (जैसे, एक गुड़िया को खिलाना, एक खिलौना फोन पर बात करना)?",
+    "options_en": ["Engages in pretend play regularly", "Will join in if an adult leads", "Prefers more logical or construction-based play", "Does not engage in pretend play"],
+    "options_hi": ["नियमित रूप से नाटक खेलने में संलग्न रहता है", "अगर कोई वयस्क नेतृत्व करता है तो शामिल हो जाएगा", "अधिक तार्किक या निर्माण-आधारित खेल पसंद करता है", "नाटक खेलने में संलग्न नहीं होता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 46,
+    "question_en": "Does the individual struggle to understand the 'unwritten rules' of social situations?",
+    "question_hi": "क्या व्यक्ति सामाजिक स्थितियों के 'अनलिखे नियमों' को समझने के लिए संघर्ष करता है?",
+    "options_en": ["No, navigates social rules easily", "Sometimes needs clarification", "Often feels like they've made a social mistake without knowing why", "Finds social rules confusing and unpredictable"],
+    "options_hi": ["नहीं, सामाजिक नियमों को आसानी से नेविगेट करता है", "कभी-कभी स्पष्टीकरण की आवश्यकता होती है", "अक्सर ऐसा महसूस होता है कि उन्होंने बिना जाने कोई सामाजिक गलती की है", "सामाजिक नियमों को भ्रामक और अप्रत्याशित पाता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["12-16", "16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 47,
+    "question_en": "Does the individual show an unusual attachment to specific, non-toy objects (e.g., a piece of string, a bottle cap)?",
+    "question_hi": "क्या व्यक्ति विशिष्ट, गैर-खिलौना वस्तुओं (जैसे, एक तार का टुकड़ा, एक बोतल का ढक्कन) के प्रति असामान्य लगाव दिखाता है?",
+    "options_en": ["No, only to typical comfort items like a blanket or stuffed animal", "Has some favorite objects but can be redirected", "Yes, has a strong attachment to one or more unusual objects", "Becomes very distressed if the object is taken away"],
+    "options_hi": ["नहीं, केवल एक कंबल या भरवां जानवर जैसी विशिष्ट आराम की वस्तुओं के लिए", "कुछ पसंदीदा वस्तुएं हैं लेकिन उन्हें पुनर्निर्देशित किया जा सकता है", "हाँ, एक या एक से अधिक असामान्य वस्तुओं के प्रति एक मजबूत लगाव है", "यदि वस्तु को हटा दिया जाता है तो बहुत परेशान हो जाता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 48,
+    "question_en": "Does the individual seem to have a different pain tolerance than others (either very high or very low)?",
+    "question_hi": "क्या व्यक्ति में दूसरों की तुलना में एक अलग दर्द सहनशीलता (या तो बहुत अधिक या बहुत कम) लगती है?",
+    "options_en": ["Seems to have a typical pain response", "Sometimes over-reacts to small scrapes", "Sometimes under-reacts to significant injuries", "Has a noticeably high or low pain tolerance"],
+    "options_hi": ["एक विशिष्ट दर्द प्रतिक्रिया लगती है", "कभी-कभी छोटी खरोंचों पर अति-प्रतिक्रिया करता है", "कभी-कभी महत्वपूर्ण चोटों पर कम-प्रतिक्रिया करता है", "एक स्पष्ट रूप से उच्च या निम्न दर्द सहनशीलता है"],
+    "weightage": [0, 1, 1, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Sensory Sensitivity"
+  },
+  {
+    "questionId": 49,
+    "question_en": "When upset, is the individual able to be comforted by others?",
+    "question_hi": "जब परेशान होता है, तो क्या व्यक्ति दूसरों द्वारा आराम दिया जा सकता है?",
+    "options_en": ["Yes, easily comforted by hugs or words", "Can be comforted, but it takes time", "Prefers to be left alone to calm down", "Resists being touched or comforted when upset"],
+    "options_hi": ["हाँ, गले लगाने या शब्दों से आसानी से आराम मिलता है", "आराम दिया जा सकता है, लेकिन इसमें समय लगता है", "शांत होने के लिए अकेले रहना पसंद करता है", "परेशान होने पर छुए जाने या आराम दिए जाने का विरोध करता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 50,
+    "question_en": "Do you often feel exhausted from trying to act 'normal' in social situations (social masking)?",
+    "question_hi": "क्या आप अक्सर सामाजिक स्थितियों में 'सामान्य' अभिनय करने की कोशिश से थक जाते हैं (सामाजिक मास्किंग)?",
+    "options_en": ["No, I feel natural in social situations", "It can be a bit tiring, but it's manageable", "Yes, social interaction is often draining", "I feel completely exhausted and need to be alone after socializing"],
+    "options_hi": ["नहीं, मैं सामाजिक स्थितियों में स्वाभाविक महसूस करता हूँ", "यह थोड़ा थकाऊ हो सकता है, लेकिन यह प्रबंधनीय है", "हाँ, सामाजिक संपर्क अक्सर थका देने वाला होता है", "मैं पूरी तरह से थक जाता हूँ और सामाजिक होने के बाद अकेले रहने की आवश्यकता होती है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 51,
+    "question_en": "Does the child look at your face to check your reaction when they encounter something new or uncertain?",
+    "question_hi": "जब बच्चा कुछ नया या अनिश्चित सामना करता है तो क्या वह आपकी प्रतिक्रिया की जांच करने के लिए आपके चेहरे को देखता है?",
+    "options_en": ["Yes, always checks for reassurance", "Sometimes", "Rarely", "Never, seems to act independently of my reaction"],
+    "options_hi": ["हाँ, हमेशा आश्वासन के लिए जाँच करता है", "कभी-कभी", "शायद ही कभी", "कभी नहीं, मेरी प्रतिक्रिया से स्वतंत्र रूप से कार्य करता प्रतीत होता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 52,
+    "question_en": "Does the individual seem to have a strong need for order or symmetry?",
+    "question_hi": "क्या व्यक्ति को व्यवस्था या समरूपता की एक मजबूत आवश्यकता लगती है?",
+    "options_en": ["No, they are not bothered by mess or asymmetry", "Likes things to be tidy, but is not rigid about it", "Spends time arranging or ordering objects", "Becomes distressed if things are not 'just right' or perfectly aligned"],
+    "options_hi": ["नहीं, वे गंदगी या विषमता से परेशान नहीं होते हैं", "चीजों को साफ-सुथरा रखना पसंद करते हैं, लेकिन इसके बारे में कठोर नहीं हैं", "वस्तुओं को व्यवस्थित करने या आदेश देने में समय बिताते हैं", "अगर चीजें 'ठीक' या पूरी तरह से संरेखित नहीं हैं तो परेशान हो जाते हैं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 53,
+    "question_en": "Does the individual have difficulty with imaginative or creative tasks that don't have clear rules?",
+    "question_hi": "क्या व्यक्ति को कल्पनाशील या रचनात्मक कार्यों में कठिनाई होती है जिनके स्पष्ट नियम नहीं होते हैं?",
+    "options_en": ["No, they are very creative and imaginative", "They are better at tasks with clear instructions", "They struggle with open-ended creative tasks", "They strongly avoid imaginative tasks and prefer logic-based activities"],
+    "options_hi": ["नहीं, वे बहुत रचनात्मक और कल्पनाशील हैं", "वे स्पष्ट निर्देशों वाले कार्यों में बेहतर हैं", "वे खुले अंत वाले रचनात्मक कार्यों के साथ संघर्ष करते हैं", "वे कल्पनाशील कार्यों से बहुत बचते हैं और तर्क-आधारित गतिविधियों को पसंद करते हैं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 54,
+    "question_en": "Is the child's language development delayed compared to their peers?",
+    "question_hi": "क्या बच्चे का भाषा विकास अपने साथियों की तुलना में धीमा है?",
+    "options_en": ["No, language is at or above age level", "Slightly delayed, but catching up", "Noticeably delayed", "Very limited speech or non-verbal"],
+    "options_hi": ["नहीं, भाषा उम्र के स्तर पर या उससे ऊपर है", "थोड़ा धीमा, लेकिन पकड़ रहा है", "स्पष्ट रूप से धीमा", "बहुत सीमित भाषण या गैर-मौखिक"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 55,
+    "question_en": "Do you find it difficult to 'read between the lines' in a conversation?",
+    "question_hi": "क्या आपको बातचीत में 'लाइनों के बीच पढ़ना' मुश्किल लगता है?",
+    "options_en": ["No, I usually understand implied meanings", "Sometimes I miss the point", "I often need people to be very direct with me", "I almost always take what people say literally"],
+    "options_hi": ["नहीं, मैं आमतौर पर निहित अर्थों को समझता हूँ", "कभी-कभी मैं बात को चूक जाता हूँ", "मुझे अक्सर लोगों को मेरे साथ बहुत सीधा होना पड़ता है", "मैं लगभग हमेशा लोगों द्वारा कही गई बातों को शाब्दिक रूप से लेता हूँ"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Language & Development"
+  },
+  {
+    "questionId": 56,
+    "question_en": "Does the individual have a 'poker face' or limited range of facial expressions?",
+    "question_hi": "क्या व्यक्ति का 'पोकर फेस' या चेहरे के भावों की सीमित सीमा है?",
+    "options_en": ["No, very expressive", "Sometimes hard to read", "Often has a neutral or blank expression", "Facial expressions often don't match their emotions"],
+    "options_hi": ["नहीं, बहुत अभिव्यंजक", "कभी-कभी पढ़ना मुश्किल होता है", "अक्सर एक तटस्थ या खाली अभिव्यक्ति होती है", "चेहरे के भाव अक्सर उनकी भावनाओं से मेल नहीं खाते हैं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["5-12", "12-16", "16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 57,
+    "question_en": "Does the individual seem indifferent to praise or rewards?",
+    "question_hi": "क्या व्यक्ति प्रशंसा या पुरस्कार के प्रति उदासीन लगता है?",
+    "options_en": ["No, they are motivated by praise", "Sometimes seems uninterested", "Often indifferent", "Seems motivated only by their own interests"],
+    "options_hi": ["नहीं, वे प्रशंसा से प्रेरित होते हैं", "कभी-कभी अरुचिपूर्ण लगते हैं", "अक्सर उदासीन", "केवल अपनी रुचियों से प्रेरित लगते हैं"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 58,
+    "question_en": "How does the individual handle waiting or delays?",
+    "question_hi": "व्यक्ति प्रतीक्षा या देरी को कैसे संभालता है?",
+    "options_en": ["Patiently", "A little restless", "Becomes very anxious or impatient", "Has a very hard time waiting for anything"],
+    "options_hi": ["धैर्यपूर्वक", "थोड़ा बेचैन", "बहुत चिंतित या अधीर हो जाता है", "किसी भी चीज के लिए इंतजार करना बहुत मुश्किल होता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16"],
+    "category": "Repetitive Behaviors"
+  },
+  {
+    "questionId": 59,
+    "question_en": "Does the individual seem to be in their 'own world' much of the time?",
+    "question_hi": "क्या व्यक्ति ज्यादातर समय अपनी 'अपनी दुनिया' में लगता है?",
+    "options_en": ["No, they are present and engaged", "Sometimes seems distracted or daydreams", "Often seems tuned out or lost in thought", "Yes, it's often hard to get their attention"],
+    "options_hi": ["नहीं, वे उपस्थित और लगे हुए हैं", "कभी-कभी विचलित या दिन में सपने देखते लगते हैं", "अक्सर धुन से बाहर या विचारों में खोए हुए लगते हैं", "हाँ, अक्सर उनका ध्यान आकर्षित करना मुश्किल होता है"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["2-5", "5-12", "12-16", "16+"],
+    "category": "Social Communication"
+  },
+  {
+    "questionId": 60,
+    "question_en": "Do you enjoy social gatherings?",
+    "question_hi": "क्या आप सामाजिक समारोहों का आनंद लेते हैं?",
+    "options_en": ["Yes, I enjoy them a lot", "I enjoy them in small doses or with close friends", "I find them overwhelming and tiring", "I avoid them whenever possible"],
+    "options_hi": ["हाँ, मैं उनका बहुत आनंद लेता हूँ", "मैं उन्हें छोटी खुराक में या करीबी दोस्तों के साथ आनंद लेता हूँ", "मुझे वे भारी और थका देने वाले लगते हैं", "मैं जब भी संभव हो उनसे बचता हूँ"],
+    "weightage": [0, 1, 2, 2],
+    "ageGroup": ["16+"],
+    "category": "Social Communication"
+  }
+]
