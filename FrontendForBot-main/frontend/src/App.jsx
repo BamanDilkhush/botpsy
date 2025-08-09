@@ -11,6 +11,7 @@ import Assessment from './pages/Assessment';
 import Dashboard from './pages/Dashboard';
 import Admin from './pages/Admin';
 import AiAssistant from './pages/AiAssistant';
+import VerifyEmail from './pages/VerifyEmail'; // --- NEW ---
 
 function App() {
   const location = useLocation();
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/verify-email" element={<VerifyEmail />} /> {/* --- NEW --- */}
 
           {/* Protected Routes for Logged-in Users */}
           <Route element={<ProtectedRoute />}>
@@ -33,7 +35,7 @@ function App() {
 
           {/* Admin-Only Routes */}
           <Route element={<AdminRoute />}>
-             <Route path="/admin" element={<Admin />} />
+              <Route path="/admin" element={<Admin />} />
           </Route>
         </Routes>
       </AnimatePresence>
