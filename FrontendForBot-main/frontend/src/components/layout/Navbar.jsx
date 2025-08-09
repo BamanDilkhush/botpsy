@@ -89,7 +89,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="md:hidden absolute top-full left-0 w-full bg-surface shadow-lg"
+                        className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-lg"
                     >
                         <div className="px-4 pt-2 pb-4 space-y-2">
                             {user ? (
