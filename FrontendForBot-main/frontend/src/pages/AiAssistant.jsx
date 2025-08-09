@@ -78,7 +78,7 @@ const AiAssistant = () => {
                                             <Bot className="w-6 h-6 text-primary" />
                                         </div>
                                     )}
-                                    <div className={`max-w-lg p-3 rounded-2xl shadow-sm ${msg.role === 'user' ? 'bg-primary text-white rounded-br-none' : 'bg-gray-100 text-text rounded-bl-none'}`}>
+                                    <div className={`max-w-lg p-3 rounded-2xl shadow-sm ${msg.role === 'user' ? 'bg-gray-200 text-gray-800 rounded-br-none' : 'bg-gray-100 text-text rounded-bl-none'}`}>
                                         <p className="text-sm" dangerouslySetInnerHTML={{ __html: msg.parts[0].text.replace(/\n/g, '<br />') }} />
                                     </div>
                                     {msg.role === 'user' && (
