@@ -24,9 +24,9 @@ const Navbar = () => {
         }`;
     
     const mobileNavLinkStyle = ({ isActive }) =>
-        `flex items-center px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200 ${
-            isActive ? 'bg-primary text-white' : 'text-gray-700 hover:bg-gray-100'
-        }`;
+    `flex items-center px-4 py-3 rounded-lg text-base font-semibold transition-all duration-200 ${
+        isActive ? 'bg-primary text-white' : 'text-gray-300 hover:bg-white/10 hover:text-white'
+    }`;
 
     const navItems = user ? [
         { to: "/dashboard", icon: <LayoutDashboard className="h-5 w-5 mr-3" />, label: "Dashboard" },
