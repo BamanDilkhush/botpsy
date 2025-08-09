@@ -114,7 +114,7 @@ const Dashboard = () => {
                             <h2 className="text-2xl font-bold mb-2">Have Questions?</h2>
                             <p className="mb-4 opacity-90">Our AI Assistant can provide insights and answer your questions.</p>
                             <Link to="/ai-assistant">
-                                <AnimatedButton variant="secondary" className="!bg-white !text-primary-dark">
+                                <AnimatedButton variant="secondary" className="!bg-white !text-indigo-600">
                                     Talk to AI
                                 </AnimatedButton>
                             </Link>
