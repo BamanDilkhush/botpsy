@@ -6,6 +6,7 @@ import AuthLayout from '../components/auth/AuthLayout';
 import AnimatedButton from '../components/common/AnimatedButton';
 import Spinner from '../components/common/Spinner';
 import { pageVariants, pageTransition, itemVariants } from '../utils/motionVariants';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { register } = useAuth();
@@ -17,18 +18,29 @@ const Register = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleRegister = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        try {
-            await register(formData.name, formData.email, formData.password);
-            navigate('/dashboard');
-        } catch (error) {
-             // Error toast is handled in AuthContext
-        } finally {
-            setLoading(false);
-        }
-    };
+    import toast from 'react-hot-toast'; // Make sure to import this at the top of your file
+
+// ...
+
+const handleRegister = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+        // The register function should now return the success message from the API
+        const message = await register(formData.name, formData.email, formData.password);
+        
+        // Show a success toast with the message
+        toast.success(message);
+        
+        // Redirect to the login page
+        navigate('/login');
+
+    } catch (error) {
+        // The error toast is already handled in your AuthContext, which is fine.
+    } finally {
+        setLoading(false);
+    }
+};
 
     return (
         <motion.div
