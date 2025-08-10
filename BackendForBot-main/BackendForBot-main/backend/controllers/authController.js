@@ -50,7 +50,7 @@ const registerUser = asyncHandler(async (req, res) => {
             const verificationUrl = `${process.env.FRONTEND_URL}/verify-email?token=${verificationToken}`;
 
             await resend.emails.send({
-                from: 'BotPsych Onboarding <onboarding@yourverifieddomain.com>', // Replace with your verified domain
+                from: 'Onboarding <onboarding@botpsy.site>', // Replace with your verified domain
                 to: user.email,
                 subject: 'Verify Your Email for BotPsych',
                 html: `<h1>Welcome to BotPsych!</h1><p>Please click the link below to verify your email address:</p><a href="${verificationUrl}" style="color: blue;">Verify My Email</a>`
