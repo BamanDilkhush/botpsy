@@ -53,7 +53,7 @@ const Home = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-indigo-700 mb-6"
+          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6"
         >
           Early Insights, Brighter Futures
         </motion.h1>
