@@ -18,9 +18,6 @@ const Register = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    import toast from 'react-hot-toast'; // Make sure to import this at the top of your file
-
-// ...
 
 const handleRegister = async (e) => {
     e.preventDefault();
