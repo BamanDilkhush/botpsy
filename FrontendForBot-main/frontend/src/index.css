@@ -8,3 +8,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Floating blob animation (used globally) */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Utility classes for the animation */
+.animate-blob {
+  animation: blob 20s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* small utility to reduce blob intensity on small screens */
+@media (max-width: 640px) {
+  .animate-blob {
+    opacity: 0.18 !important;
+    filter: blur(2.5rem) !important;
+    transform-origin: center;
+  }
+}
