@@ -77,7 +77,8 @@ const QuestionForm = ({ onSubmit, initialData = {}, isSubmitting }) => {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4 max-h-[70vh] overflow-y-auto pr-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 bg-gray-50 p-4 rounded-lg">
+            {/* 🔹 changed bg-gray-50 → bg-white */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 bg-white p-4 rounded-lg shadow">
                 {renderInput('questionId', 'Question ID (e.g., 101)', 'number')}
                 {renderInput('category', 'Category (e.g., Social)')}
                 {renderInput('question_en', 'Question (English)', 'textarea', true)}
@@ -87,7 +88,7 @@ const QuestionForm = ({ onSubmit, initialData = {}, isSubmitting }) => {
                 {renderInput('weightage', 'Weightage (comma-separated numbers)')}
                 {renderInput('ageGroup', 'Age Groups (e.g., 2-5, 16+)')}
             </div>
-            <div className="flex justify-end pt-4 sticky bottom-0 bg-surface pb-2">
+            <div className="flex justify-end pt-4 sticky bottom-0 bg-white pb-2">
                 <AnimatedButton type="submit" disabled={isSubmitting} className="w-full md:w-auto">
                     {isSubmitting ? 'Submitting...' : (initialData._id ? 'Update Question' : 'Create Question')}
                 </AnimatedButton>
