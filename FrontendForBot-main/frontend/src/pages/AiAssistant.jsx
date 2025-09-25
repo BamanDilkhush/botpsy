@@ -58,10 +58,10 @@ const AiAssistant = () => {
             className="max-w-3xl mx-auto"
         >
             <Card className="!p-0">
-                <div className="flex items-center p-6 border-b border-gray-200 bg-gradient-to-r from-primary to-indigo-600 text-white rounded-t-xl">
-                    <Sparkles className="w-8 h-8 mr-3" />
-                    <h1 className="text-3xl font-bold">AI Assistant</h1>
-                </div>
+                <div className="flex items-center p-6 border-b border-gray-200 bg-[#2563EB] text-white rounded-t-xl">
+    <Sparkles className="w-8 h-8 mr-3 text-white" />
+    <h1 className="text-3xl font-bold">AI Assistant</h1>
+</div>
                 <div className="h-[60vh] flex flex-col p-6">
                     <div className="flex-grow overflow-y-auto pr-4 mb-4 space-y-4">
                         <AnimatePresence>
