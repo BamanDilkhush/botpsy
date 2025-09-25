@@ -4,18 +4,24 @@ import { Link } from 'react-router-dom';
 import { BrainCircuit, BarChart, MessageSquare, Sparkles } from 'lucide-react';
 import AnimatedButton from '../components/common/AnimatedButton';
 import { containerVariants, itemVariants } from '../utils/motionVariants';
-import Card from '../components/common/Card';
 
-const FeatureCard = ({ icon, title, children }) => (
+const FeatureCard = ({ icon, title, children, accent = 'bg-white' }) => (
   <motion.div
     variants={itemVariants}
-    className="bg-surface/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 shadow-lg"
+    className="relative bg-white rounded-2xl p-8 shadow-md flex flex-col items-center text-center min-h-[18rem] overflow-hidden"
   >
-    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-indigo-500 text-white flex items-center justify-center mx-auto mb-6 shadow-lg">
+    <div
+      className="w-16 h-16 rounded-full flex items-center justify-center mb-6 shadow-sm"
+      style={{ background: 'rgba(37,99,235,0.08)' }}
+    >
       {icon}
     </div>
-    <h3 className="text-xl font-bold text-text mb-2">{title}</h3>
-    <p className="text-text-light">{children}</p>
+
+    <h3 className="text-xl font-semibold text-gray-800 mb-3">{title}</h3>
+    <p className="text-gray-600 max-w-[36rem]">{children}</p>
+
+    {/* subtle decorative circle behind title (non-overlapping, purely visual) */}
+    <div className="absolute -bottom-8 -right-8 w-24 h-24 rounded-full opacity-10 pointer-events-none" style={{ background: '#2563EB' }} />
   </motion.div>
 );
 
@@ -27,16 +33,15 @@ const Home = () => {
       exit="out"
       variants={{
         initial: { opacity: 0 },
-        in: { opacity: 1, transition: { staggerChildren: 0.2, duration: 0.5 } },
+        in: { opacity: 1, transition: { staggerChildren: 0.12, duration: 0.45 } },
         out: { opacity: 0 }
       }}
-      className="relative overflow-hidden"
+      className="relative overflow-visible"
     >
-      {/* Floating background blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute top-20 -left-20 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
-        <div className="absolute top-40 right-0 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
+      {/* soft page blobs (kept very subtle & small so they don't overlap cards) */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="hidden md:block absolute left-8 top-12 w-60 h-60 rounded-full bg-blue-100/40 filter blur-3xl"></div>
+        <div className="hidden md:block absolute right-8 top-28 w-72 h-72 rounded-full bg-green-100/30 filter blur-3xl"></div>
       </div>
 
       {/* Hero Section */}
@@ -44,7 +49,7 @@ const Home = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-center py-20 md:py-32"
+        className="text-center py-16 md:py-28"
       >
         <motion.div
           variants={itemVariants}
@@ -55,17 +60,16 @@ const Home = () => {
 
         <motion.h1
           variants={itemVariants}
-          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6"
+          className="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-4 md:mb-6 leading-tight"
         >
           Early Insights, Brighter Futures
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="text-lg text-text-light max-w-3xl mx-auto mb-10"
+          className="text-base md:text-lg text-text-light max-w-3xl mx-auto mb-8 px-4"
         >
-          BotPsych is your intelligent companion for autism awareness and support —
-          offering early screening, personalized progress tracking, and AI-driven guidance.
+          BotPsych is your intelligent companion for autism awareness and support — offering early screening, personalized progress tracking, and AI-driven guidance.
         </motion.p>
 
         <motion.div
@@ -81,64 +85,67 @@ const Home = () => {
         </motion.div>
       </motion.section>
 
-      {/* Why BotPsych Section */}
+      {/* Why BotPsych */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="py-20 bg-white/70 backdrop-blur-md"
+        className="py-12 md:py-16 bg-white/80"
       >
-        <div className="max-w-5xl mx-auto text-center px-6">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">Why Choose BotPsych?</h2>
-          <p className="text-lg text-text-light">
-            Early detection and personalized support can change lives.
-            BotPsych empowers families and caregivers with tools to better understand
+        <div className="max-w-4xl mx-auto text-center px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Why Choose BotPsych?</h2>
+          <p className="text-gray-600 text-base md:text-lg">
+            Early detection and personalized support can change lives. BotPsych empowers families and caregivers with tools to better understand
             and track developmental patterns — providing clarity, not confusion.
           </p>
         </div>
       </motion.section>
 
-      {/* How It Works */}
+      {/* Clean Features Grid (replaces the previous overlapping decorative layout) */}
       <motion.section
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-20"
+        viewport={{ once: true, amount: 0.25 }}
+        className="py-12 md:py-16"
       >
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-800">How It Works</h2>
-          <p className="mt-4 text-lg text-text-light">
-            A simple 3-step journey designed to support you every step of the way.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold">How It Works</h3>
+            <p className="mt-2 text-gray-600">A simple 3-step journey designed to support you every step of the way.</p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-          <FeatureCard icon={<BrainCircuit className="w-8 h-8" />} title="Step 1: Assessment">
-            Take an AI-powered screening to get initial insights into developmental patterns.
-          </FeatureCard>
-          <FeatureCard icon={<BarChart className="w-8 h-8" />} title="Step 2: Dashboard">
-            Track your progress over time and visualize improvements or areas of concern.
-          </FeatureCard>
-          <FeatureCard icon={<MessageSquare className="w-8 h-8" />} title="Step 3: AI Assistant">
-            Get personalized guidance and answers from our AI assistant anytime.
-          </FeatureCard>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <FeatureCard icon={<BrainCircuit className="w-6 h-6 text-[#2563EB]" />} title="Assessment">
+              Take a short, AI-powered screening to get an initial risk-level indication. Results are for guidance, not diagnosis.
+            </FeatureCard>
+
+            <FeatureCard icon={<BarChart className="w-6 h-6 text-[#10B981]" />} title="Dashboard">
+              View results over time, track progress visually, and share summaries with clinicians or caregivers.
+            </FeatureCard>
+
+            <FeatureCard icon={<MessageSquare className="w-6 h-6 text-[#F97316]" />} title="AI Assistant">
+              Ask questions, get explanations, and receive personalized suggestions from our built-in AI companion.
+            </FeatureCard>
+          </div>
         </div>
       </motion.section>
 
       {/* CTA */}
       <motion.section
         variants={itemVariants}
-        className="py-20 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center"
+        className="py-12 md:py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center rounded-tl-2xl rounded-tr-2xl"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Begin Your Journey?</h2>
-        <p className="mb-8 text-lg opacity-90">Take the first step towards clarity and support.</p>
-        <Link to="/assessment">
-          <AnimatedButton variant="secondary" className="!text-lg !px-10 !py-5 !bg-white !text-indigo-600">
-            Start Assessment
-          </AnimatedButton>
-        </Link>
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Begin Your Journey?</h2>
+          <p className="mb-6 text-gray-100/90">Take the first step towards clarity and support.</p>
+          <Link to="/assessment">
+            <AnimatedButton variant="secondary" className="!text-lg !px-10 !py-4 !bg-white !text-indigo-600">
+              Start Assessment
+            </AnimatedButton>
+          </Link>
+        </div>
       </motion.section>
     </motion.div>
   );
