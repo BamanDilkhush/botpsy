@@ -11,7 +11,8 @@ const FeatureCard = ({ icon, title, children }) => (
     variants={itemVariants}
     className="bg-surface/70 backdrop-blur-sm rounded-2xl p-8 text-center border border-white/50 shadow-lg"
   >
-    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-indigo-500 text-white flex items-center justify-center mx-auto mb-6 shadow-lg">
+    {/* Changed circle background to solid bold blue (#2563EB) */}
+    <div className="w-16 h-16 rounded-full bg-[#2563EB] text-white flex items-center justify-center mx-auto mb-6 shadow-lg">
       {icon}
     </div>
     <h3 className="text-xl font-bold text-text mb-2">{title}</h3>
@@ -90,13 +91,13 @@ const Home = () => {
           <p className="mt-4 text-lg text-text-light">Everything you need to understand and support development.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard icon={<BrainCircuit className="w-8 h-8" />}>
+          <FeatureCard icon={<BrainCircuit className="w-8 h-8" />} title="AI-Powered Assessment">
             AI-Powered Assessment
           </FeatureCard>
-          <FeatureCard icon={<BarChart className="w-8 h-8" />}>
+          <FeatureCard icon={<BarChart className="w-8 h-8" />} title="Progress Tracking">
             Progress Tracking
           </FeatureCard>
-          <FeatureCard icon={<MessageSquare className="w-8 h-8" />}>
+          <FeatureCard icon={<MessageSquare className="w-8 h-8" />} title="Personalized Insights">
             Personalized Insights
           </FeatureCard>
         </div>
