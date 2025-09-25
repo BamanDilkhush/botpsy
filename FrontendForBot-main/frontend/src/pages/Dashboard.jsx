@@ -109,16 +109,19 @@ const Dashboard = () => {
                     </motion.div>
                     
                     <motion.div variants={itemVariants} className="lg:col-span-2 space-y-8">
-                        <Card className="flex flex-col justify-center items-center text-center h-full bg-gradient-to-br from-primary to-indigo-600 text-white">
-                            <MessageSquare className="w-12 h-12 mb-4" />
-                            <h2 className="text-2xl font-bold mb-2">Have Questions?</h2>
-                            <p className="mb-4 opacity-90">Our AI Assistant can provide insights and answer your questions.</p>
-                            <Link to="/ai-assistant">
-                                <AnimatedButton variant="secondary" className="!bg-white !text-indigo-600">
-                                    Talk to AI
-                                </AnimatedButton>
-                            </Link>
-                        </Card>
+<Card className="flex flex-col justify-center items-center text-center h-full bg-[#2563EB] text-white">
+    <MessageSquare className="w-12 h-12 mb-4" />
+    <h2 className="text-2xl font-bold mb-2">Have Questions?</h2>
+    <p className="mb-4 opacity-90">Our AI Assistant can provide insights and answer your questions.</p>
+    <Link to="/ai-assistant">
+        <AnimatedButton
+            variant="secondary"
+            className="!bg-white !text-[#2563EB] hover:!bg-gray-100 transition"
+        >
+            Talk to AI
+        </AnimatedButton>
+    </Link>
+</Card>
                     </motion.div>
                 </div>
             </motion.div>
