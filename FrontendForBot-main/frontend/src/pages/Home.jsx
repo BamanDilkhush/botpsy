@@ -87,20 +87,44 @@ const Home = () => {
 
       {/* Why BotPsych */}
       <motion.section
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        className="py-12 md:py-16 bg-white/80"
+  variants={containerVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  className="py-12 md:py-16 bg-gray-50"
+>
+  <div className="max-w-6xl mx-auto px-6">
+    <div className="text-center mb-12">
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-800">Why Choose BotPsych?</h2>
+      <p className="mt-3 text-gray-600 text-base md:text-lg max-w-2xl mx-auto">
+        Early detection and personalized support can change lives. Here’s how BotPsych empowers you.
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <FeatureCard
+        icon={<Sparkles className="w-6 h-6 text-[#2563EB]" />}
+        title="Early Detection"
       >
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Why Choose BotPsych?</h2>
-          <p className="text-gray-600 text-base md:text-lg">
-            Early detection and personalized support can change lives. BotPsych empowers families and caregivers with tools to better understand
-            and track developmental patterns — providing clarity, not confusion.
-          </p>
-        </div>
-      </motion.section>
+        Identify developmental patterns sooner with AI-powered insights — helping you take the right steps early.
+      </FeatureCard>
+
+      <FeatureCard
+        icon={<BrainCircuit className="w-6 h-6 text-[#10B981]" />}
+        title="Personalized Support"
+      >
+        Get recommendations tailored to your progress, not generic advice — making guidance more relevant and useful.
+      </FeatureCard>
+
+      <FeatureCard
+        icon={<MessageSquare className="w-6 h-6 text-[#F97316]" />}
+        title="Clarity, Not Confusion"
+      >
+        Simplify complex information with easy-to-understand visuals, tools, and guidance that caregivers can trust.
+      </FeatureCard>
+    </div>
+  </div>
+</motion.section>
 
       {/* Clean Features Grid (replaces the previous overlapping decorative layout) */}
       <motion.section
