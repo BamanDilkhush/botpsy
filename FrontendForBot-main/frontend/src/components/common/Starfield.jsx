@@ -1,61 +1,75 @@
 import React, { useEffect, useRef } from "react";
 
 /**
- * Starfield with subtle motion and connecting lines (constellation effect).
- * - pointer-events-none so it does not block UI interaction
- * - -z-20 so it sits behind your existing -z-10 blobs
+ * Enhanced Starfield (brighter + debug logs).
+ * - Console log to verify it's mounted
+ * - Ensures canvas uses devicePixelRatio for crispness
+ * - Slightly stronger lines so you can verify visibility
  */
-const Starfield = ({ starCount = 120, maxLinkDistance = 120 }) => {
+const Starfield = ({ starCount = 160, maxLinkDistance = 120 }) => {
   const canvasRef = useRef(null);
   const rafRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
+    console.log("[Starfield] mounted", { canvas });
+
     const ctx = canvas.getContext("2d");
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
 
-    let width = (canvas.width = window.innerWidth);
-    let height = (canvas.height = window.innerHeight);
+    // handle devicePixelRatio for sharp rendering
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    // create stars
+    // Create stars
     const stars = Array.from({ length: starCount }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: Math.random() * 1.5 + 0.2,
-      vx: (Math.random() - 0.5) * 0.25,
-      vy: (Math.random() - 0.5) * 0.25,
-      twinkle: Math.random() * 0.5 + 0.5,
+      r: Math.random() * 1.6 + 0.4,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      phase: Math.random() * Math.PI * 2,
     }));
 
-    function draw() {
-      ctx.clearRect(0, 0, width, height);
+    let lastTime = performance.now();
 
-      // subtle background glow (very faint)
-      // ctx.fillStyle = "rgba(10,12,20,0.02)";
-      // ctx.fillRect(0, 0, width, height);
+    function draw(now = performance.now()) {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+
+      ctx.clearRect(0, 0, width, height);
 
       // draw stars
       for (let i = 0; i < stars.length; i++) {
         const s = stars[i];
 
-        // move
-        s.x += s.vx;
-        s.y += s.vy;
+        s.x += s.vx * dt * 60;
+        s.y += s.vy * dt * 60;
 
-        // bounce edges
-        if (s.x < 0 || s.x > width) s.vx *= -1;
-        if (s.y < 0 || s.y > height) s.vy *= -1;
+        // bounce
+        if (s.x < 0) { s.x = 0; s.vx *= -1; }
+        if (s.x > width) { s.x = width; s.vx *= -1; }
+        if (s.y < 0) { s.y = 0; s.vy *= -1; }
+        if (s.y > height) { s.y = height; s.vy *= -1; }
 
-        // twinkle effect
-        const tw = (Math.sin((Date.now() / 500) + i) + 1) / 2;
-        const radius = s.r * (0.7 + 0.6 * tw * s.twinkle);
+        // twinkle
+        s.phase += dt * (0.5 + (i % 5) * 0.02);
+        const tw = 0.6 + 0.4 * Math.sin(s.phase);
+        const radius = s.r * tw;
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${0.7 * (0.6 + tw * s.twinkle)})`;
+        ctx.fillStyle = `rgba(255,255,255,${0.85 * tw})`;
         ctx.fill();
       }
 
-      // draw connecting lines (constellation)
+      // connection lines — slightly stronger so you can see them
       for (let i = 0; i < stars.length; i++) {
         for (let j = i + 1; j < stars.length; j++) {
           const a = stars[i];
@@ -65,9 +79,8 @@ const Starfield = ({ starCount = 120, maxLinkDistance = 120 }) => {
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < maxLinkDistance) {
             const alpha = 1 - dist / maxLinkDistance;
-            // only draw faint lines
-            ctx.strokeStyle = `rgba(200,220,255,${0.08 * alpha})`;
-            ctx.lineWidth = 0.6 * alpha;
+            ctx.strokeStyle = `rgba(200,220,255,${0.12 * alpha})`;
+            ctx.lineWidth = 0.7 * alpha;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
             ctx.lineTo(b.x, b.y);
@@ -79,24 +92,31 @@ const Starfield = ({ starCount = 120, maxLinkDistance = 120 }) => {
       rafRef.current = requestAnimationFrame(draw);
     }
 
-    draw();
+    rafRef.current = requestAnimationFrame(draw);
 
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
+      // reapply DPR scaling
+      canvas.width = Math.round(width * dpr);
+      canvas.height = Math.round(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      console.log("[Starfield] unmounted");
     };
   }, [starCount, maxLinkDistance]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full -z-20 pointer-events-none"
+      className="fixed inset-0 w-full h-full -z-30 pointer-events-none"
       aria-hidden="true"
     />
   );
