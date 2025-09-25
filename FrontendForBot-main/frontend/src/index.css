@@ -96,3 +96,30 @@ body {
 .chat-cta:hover {
   background: #1e40af; /* darker hover */
 }
+
+/* Subtle decorative helpers for Home features */
+.home-decor-dot {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 999px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* ensure the subtle background blobs don't overlap card content at smaller widths */
+@media (max-width: 768px) {
+  .home-decor-dot { display: none; }
+}
+
+/* Slight shadow for cards to keep them crisp */
+.home-feature-card {
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* ensure consistent min-height for feature cards */
+@media (min-width: 768px) {
+  .feature-equal {
+    min-height: 18rem;
+  }
+}
+
