@@ -38,7 +38,7 @@ const Home = () => {
         <div className="absolute bottom-0 left-1/3 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-4000"></div>
       </div>
 
-      <motion.section
+            <motion.section
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -54,11 +54,12 @@ const Home = () => {
 
         <motion.h1
           variants={itemVariants}
-          /* increased line-height, allow overflow visible and small bottom padding to prevent clipping */
-          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6 leading-[1.12] md:leading-[1.12] overflow-visible pb-1"
->
-  Early Insights, Brighter Futures
+          /* larger line-height and small bottom padding to fully expose descenders */
+          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-8 leading-[1.18] md:leading-[1.18] overflow-visible pb-2"
+        >
+          Early Insights, Brighter Futures
         </motion.h1>
+
 
         <motion.p
           variants={itemVariants}
