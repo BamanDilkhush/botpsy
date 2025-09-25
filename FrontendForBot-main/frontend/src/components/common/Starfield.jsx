@@ -1,7 +1,13 @@
 import React, { useEffect, useRef } from "react";
 
-const Starfield = () => {
+/**
+ * Starfield with subtle motion and connecting lines (constellation effect).
+ * - pointer-events-none so it does not block UI interaction
+ * - -z-20 so it sits behind your existing -z-10 blobs
+ */
+const Starfield = ({ starCount = 120, maxLinkDistance = 120 }) => {
   const canvasRef = useRef(null);
+  const rafRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -10,66 +16,88 @@ const Starfield = () => {
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
 
-    const stars = Array.from({ length: 120 }).map(() => ({
+    // create stars
+    const stars = Array.from({ length: starCount }).map(() => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      radius: Math.random() * 1.5,
-      dx: (Math.random() - 0.5) * 0.3,
-      dy: (Math.random() - 0.5) * 0.3,
+      r: Math.random() * 1.5 + 0.2,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      twinkle: Math.random() * 0.5 + 0.5,
     }));
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "white";
 
-      stars.forEach((star, i) => {
+      // subtle background glow (very faint)
+      // ctx.fillStyle = "rgba(10,12,20,0.02)";
+      // ctx.fillRect(0, 0, width, height);
+
+      // draw stars
+      for (let i = 0; i < stars.length; i++) {
+        const s = stars[i];
+
         // move
-        star.x += star.dx;
-        star.y += star.dy;
+        s.x += s.vx;
+        s.y += s.vy;
 
-        // bounce from edges
-        if (star.x < 0 || star.x > width) star.dx *= -1;
-        if (star.y < 0 || star.y > height) star.dy *= -1;
+        // bounce edges
+        if (s.x < 0 || s.x > width) s.vx *= -1;
+        if (s.y < 0 || s.y > height) s.vy *= -1;
 
-        // draw
+        // twinkle effect
+        const tw = (Math.sin((Date.now() / 500) + i) + 1) / 2;
+        const radius = s.r * (0.7 + 0.6 * tw * s.twinkle);
+
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${0.7 * (0.6 + tw * s.twinkle)})`;
         ctx.fill();
+      }
 
-        // connect lines to nearby stars
-        stars.forEach((other, j) => {
-          if (i !== j) {
-            const dist = Math.hypot(star.x - other.x, star.y - other.y);
-            if (dist < 100) {
-              ctx.strokeStyle = `rgba(255,255,255,${1 - dist / 100})`;
-              ctx.beginPath();
-              ctx.moveTo(star.x, star.y);
-              ctx.lineTo(other.x, other.y);
-              ctx.stroke();
-            }
+      // draw connecting lines (constellation)
+      for (let i = 0; i < stars.length; i++) {
+        for (let j = i + 1; j < stars.length; j++) {
+          const a = stars[i];
+          const b = stars[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < maxLinkDistance) {
+            const alpha = 1 - dist / maxLinkDistance;
+            // only draw faint lines
+            ctx.strokeStyle = `rgba(200,220,255,${0.08 * alpha})`;
+            ctx.lineWidth = 0.6 * alpha;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
-      requestAnimationFrame(draw);
+      rafRef.current = requestAnimationFrame(draw);
     }
 
     draw();
 
-    // resize listener
-    const resize = () => {
+    const handleResize = () => {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
-    window.addEventListener("resize", resize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", resize);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
+  }, [starCount, maxLinkDistance]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full -z-10 bg-background"
+      className="fixed inset-0 w-full h-full -z-20 pointer-events-none"
+      aria-hidden="true"
     />
   );
 };
