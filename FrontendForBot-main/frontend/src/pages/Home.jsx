@@ -158,20 +158,26 @@ const Home = () => {
 
       {/* CTA */}
       <motion.section
-        variants={itemVariants}
-        className="py-12 md:py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white text-center rounded-tl-2xl rounded-tr-2xl"
+  variants={itemVariants}
+  className="py-16 px-6 flex justify-center"
+>
+  <div className="max-w-3xl w-full text-center rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl p-10">
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      Ready to Begin Your Journey?
+    </h2>
+    <p className="mb-8 text-lg opacity-90">
+      Take the first step towards clarity and support today.
+    </p>
+    <Link to="/assessment">
+      <AnimatedButton
+        variant="secondary"
+        className="!text-lg !px-8 !py-4 !bg-white !text-indigo-600"
       >
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">Ready to Begin Your Journey?</h2>
-          <p className="mb-6 text-gray-100/90">Take the first step towards clarity and support.</p>
-          <Link to="/assessment">
-            <AnimatedButton variant="secondary" className="!text-lg !px-10 !py-4 !bg-white !text-indigo-600">
-              Start Assessment
-            </AnimatedButton>
-          </Link>
-        </div>
-      </motion.section>
-    </motion.div>
+        Start Free Assessment
+      </AnimatedButton>
+    </Link>
+  </div>
+</motion.section>
   );
 };
 
