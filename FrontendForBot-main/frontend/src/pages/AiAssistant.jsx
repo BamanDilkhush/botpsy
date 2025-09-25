@@ -4,8 +4,9 @@ import { pageVariants, pageTransition } from '../utils/motionVariants';
 import { generateGeminiResponse } from '../api/gemini';
 import Card from '../components/common/Card';
 import AnimatedButton from '../components/common/AnimatedButton';
-import { Send, Sparkles, User as UserIcon, Bot } from 'lucide-react';
+import { Send, Sparkles } from 'lucide-react';
 import toast from 'react-hot-toast';
+import ChatMessage from '../components/ai/ChatMessage';
 
 const AiAssistant = () => {
     const [messages, setMessages] = useState([
@@ -59,9 +60,10 @@ const AiAssistant = () => {
         >
             <Card className="!p-0">
                 <div className="flex items-center p-6 border-b border-gray-200 bg-[#2563EB] text-white rounded-t-xl">
-    <Sparkles className="w-8 h-8 mr-3 text-white" />
-    <h1 className="text-3xl font-bold">AI Assistant</h1>
-</div>
+                    <Sparkles className="w-8 h-8 mr-3 text-white" />
+                    <h1 className="text-3xl font-bold">AI Assistant</h1>
+                </div>
+
                 <div className="h-[60vh] flex flex-col p-6">
                     <div className="flex-grow overflow-y-auto pr-4 mb-4 space-y-4">
                         <AnimatePresence>
@@ -69,49 +71,40 @@ const AiAssistant = () => {
                                 <motion.div
                                     key={index}
                                     layout
-                                    initial={{ opacity: 0, y: 20 }}
+                                    initial={{ opacity: 0, y: 12 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : ''}`}
+                                    exit={{ opacity: 0, y: 8 }}
                                 >
-                                    {msg.role === 'model' && (
-                                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                            <Bot className="w-6 h-6 text-primary" />
-                                        </div>
-                                    )}
-                                    <div className={`max-w-lg p-3 rounded-2xl shadow-sm ${msg.role === 'user' ? 'bg-gray-200 text-gray-800 rounded-br-none' : 'bg-gray-100 text-text rounded-bl-none'}`}>
-                                        <p className="text-sm" dangerouslySetInnerHTML={{ __html: msg.parts[0].text.replace(/\n/g, '<br />') }} />
-                                    </div>
-                                    {msg.role === 'user' && (
-                                        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
-                                            <UserIcon className="w-6 h-6 text-text-light" />
-                                        </div>
-                                    )}
+                                    <ChatMessage msg={msg} isUser={msg.role === 'user'} />
                                 </motion.div>
                             ))}
                         </AnimatePresence>
+
                         {isLoading && (
                             <motion.div layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-start gap-3">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                                    <Bot className="w-6 h-6 text-primary" />
+                                <div className="w-10 h-10 rounded-full bg-[#2563EB]/10 flex items-center justify-center flex-shrink-0">
+                                    <svg className="w-6 h-6 text-[#2563EB]" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3" /></svg>
                                 </div>
                                 <div className="max-w-md p-3 rounded-2xl bg-gray-100 text-text rounded-bl-none">
                                     <div className="flex items-center space-x-1">
-                                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse [animation-delay:0.2s]" />
-                                        <span className="w-2 h-2 bg-primary rounded-full animate-pulse [animation-delay:0.4s]" />
+                                        <span className="w-2 h-2 bg-[#2563EB] rounded-full animate-pulse" />
+                                        <span className="w-2 h-2 bg-[#2563EB] rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
+                                        <span className="w-2 h-2 bg-[#2563EB] rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
                                     </div>
                                 </div>
                             </motion.div>
                         )}
+
                         <div ref={chatEndRef} />
                     </div>
+
                     <form onSubmit={handleSendMessage} className="flex items-center gap-3 pt-4 border-t">
                         <input
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Ask a question..."
-                            className="flex-grow p-3 border bg-gray-50 border-gray-300 rounded-lg focus:ring-2 focus:ring-primary"
+                            className="flex-grow p-3 border bg-gray-50 border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2563EB]"
                             disabled={isLoading}
                         />
                         <AnimatedButton type="submit" className="!p-3" disabled={isLoading}>
