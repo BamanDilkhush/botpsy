@@ -30,8 +30,7 @@ const Home = () => {
         in: { opacity: 1, transition: { staggerChildren: 0.2, duration: 0.5 } },
         out: { opacity: 0 }
       }}
-      /* Removed overflow-hidden here to avoid clipping descenders */
-      className="relative"
+      className="relative" /* keep it visible so text isn't clipped by overflow */
     >
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
         <div className="absolute top-20 -left-20 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
@@ -43,7 +42,8 @@ const Home = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="text-center py-20 md:py-32"
+        /* ensure container does not clip its children */
+        className="text-center py-20 md:py-32 overflow-visible"
       >
         <motion.div
           variants={itemVariants}
@@ -54,8 +54,8 @@ const Home = () => {
 
         <motion.h1
           variants={itemVariants}
-          /* Added an explicit (slightly larger) line-height so descenders don't get cut */
-          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6 leading-[1.05] md:leading-[1.05]"
+          /* increased line-height, allow overflow visible and small bottom padding to prevent clipping */
+          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6 leading-[1.12] md:leading-[1.12] inline-block overflow-visible pb-1"
         >
           Early Insights, Brighter Futures
         </motion.h1>
