@@ -55,9 +55,9 @@ const Home = () => {
         <motion.h1
           variants={itemVariants}
           /* increased line-height, allow overflow visible and small bottom padding to prevent clipping */
-          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6 leading-[1.12] md:leading-[1.12] inline-block overflow-visible pb-1"
-        >
-          Early Insights, Brighter Futures
+          className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700 mb-6 leading-[1.12] md:leading-[1.12] overflow-visible pb-1"
+>
+  Early Insights, Brighter Futures
         </motion.h1>
 
         <motion.p
