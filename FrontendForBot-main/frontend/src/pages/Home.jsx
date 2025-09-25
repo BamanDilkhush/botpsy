@@ -54,14 +54,6 @@ const Home = () => {
         animate="visible"
         className="text-center py-16 md:py-28"
       >
-        {/* Logo (hosted) */}
-        <motion.img
-          variants={itemVariants}
-          src="https://index.bottlrbottle9.workers.dev/0:/logo.png"
-          alt="BotPsych Logo"
-          className="mx-auto w-24 h-24 md:w-32 md:h-32 mb-6 drop-shadow-md"
-        />
-
         <motion.div
           variants={itemVariants}
           className="inline-flex items-center justify-center px-4 py-1 bg-primary/10 rounded-full mb-4 border border-primary/20"
