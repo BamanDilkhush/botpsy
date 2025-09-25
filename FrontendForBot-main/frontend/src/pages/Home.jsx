@@ -155,8 +155,6 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* CTA */}
       <motion.section
   variants={itemVariants}
   className="py-16 px-6 flex justify-center"
